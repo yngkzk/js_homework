@@ -204,11 +204,11 @@
 //   n = Math.floor((max - min) / 2) + min;
 //   let answer = prompt(`Ваше число '>' ${n}, '<' ${n} или '==' ${n}?`);
 
-//   if (answer === '>') {
+//   if (answer == '>') {
 //     min = n + 1;
-//   } else if (answer === '<') {
+//   } else if (answer == '<') {
 //     max = n - 1;
-//   } else if (answer === '==') {
+//   } else if (answer == '==') {
 //     alert(`Ваше число равно ${n}!`);
 //     break;
 //   } else {

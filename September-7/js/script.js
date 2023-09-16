@@ -53,42 +53,157 @@ class Circle {
 // С помощью написанного класса реализовать следующий блок
 // и добавить его на страницу с помощью document.write().
 
+// CLASSROOM
 
-class HtmlElement {
-    tagName;
-    ownClosed = false;
-    text;
-    attrs = [];
-    styles = [];
-    subTags = [];
-    // constructor (tagname, text = null, style = null, attr = null, subTag = null) {
-    //     this.tagName = tagname;
-    //     this.text = text;
-    //     this.styles.push(style);
-    //     this.attrs.push(attr);
-    //     this.subTags.push(subTag);
-    // }
-    createElement() {
-        return this.ownClosed ? `<${this.tagName}></${this.tagName}>` : `<${this.tagName}/>`;
+// class HtmlElement {
+//     tagName;
+//     ownClosed = false;
+//     text;
+//     attrs = [];
+//     styles = [];
+//     subTags = [];
+//     // constructor (tagname, text = null, style = null, attr = null, subTag = null) {
+//     //     this.tagName = tagname;
+//     //     this.text = text;
+//     //     this.styles.push(style);
+//     //     this.attrs.push(attr);
+//     //     this.subTags.push(subTag);
+//     // }
+//     createElement() {
+//         return this.ownClosed ? `<${this.tagName}></${this.tagName}>` : `<${this.tagName}/>`;
+//     }
+//     setAttr(value) {
+
+//     }
+//     getHtml() {
+
+//     }
+// }
+
+// const html1 = new HtmlElement()
+// html1.tagName = "div";
+// html1.ownClosed = true;
+// // html1.text = "Обратите внимание.";
+// // html1.attrs = ['style', 'src', 'target', 'href'];
+// // html1.styles = [
+// //     {selector: "margin", value: "10px"},
+// //     {selector: "color", value: "green"},
+// //     {selector: "width", value: "100%"},
+// //     {selector: "text-align", value: "justify"}
+// // ]
+
+// console.log(html1.createElement())
+
+// CHATGPT
+
+// class HtmlElement {
+//     constructor(tagName, isSelfClosing = false) {
+//     this.tagName = tagName;
+//     this.isSelfClosing = isSelfClosing;
+//     this.attributes = {};
+//     this.styles = {};
+//     this.children = [];
+//     this.textContent = '';
+//     }
+    
+//     setAttribute(name, value) {
+//     this.attributes[name] = value;
+//     }
+    
+//     setStyle(name, value) {
+//     this.styles[name] = value;
+//     }
+    
+//     appendChild(child) {
+//     this.children.push(child);
+//     }
+    
+//     prependChild(child) {
+//     this.children.unshift(child);
+//     }
+    
+//     getHtml() {
+//     let html = `<${this.tagName}`;
+    
+//     for (let attr in this.attributes) {
+//     html += ` ${attr}="${this.attributes[attr]}"`;
+//     }
+    
+//     if (Object.keys(this.styles).length > 0) {
+//     html += ' style="';
+//     for (let style in this.styles) {
+//     html += `${style}: ${this.styles[style]}; `;
+//     }
+//     html += '"';
+//     }
+    
+//     if (this.isSelfClosing) {
+//     html += '/>';
+//     } else {
+//     html += '>';
+    
+
+//     html += this.textContent;
+
+//     for (let child of this.children) {
+//     html += child.getHtml();
+//     }
+    
+//     html += ``;
+//     }
+    
+//     return html;
+//     }
+//     }
+    
+//     const block = new HtmlElement('div');
+//     const h1 = new HtmlElement('h1');
+//     h1.textContent = 'Заголовок';
+//     const p = new HtmlElement('p');
+//     p.textContent = 'Текст параграфа';
+//     const a = new HtmlElement('a');
+//     a.textContent = 'Ссылка';
+//     a.setAttribute('href', 'https://example.com');
+//     block.appendChild(h1);
+//     block.appendChild(p);
+//     block.appendChild(a);
+    
+//     document.write(block.getHtml());
+
+// CHATGPT
+
+class CssClass {
+    constructor(className) {
+    this.className = className;
+    this.styles = {};
     }
-    setAttr(value) {
-
+    
+    setStyle(property, value) {
+    this.styles[property] = value;
     }
-    getHtml() {
-
+    
+    removeStyle(property) {
+    delete this.styles[property];
     }
-}
-
-const html1 = new HtmlElement()
-html1.tagName = "div";
-html1.ownClosed = true;
-// html1.text = "Обратите внимание.";
-// html1.attrs = ['style', 'src', 'target', 'href'];
-// html1.styles = [
-//     {selector: "margin", value: "10px"},
-//     {selector: "color", value: "green"},
-//     {selector: "width", value: "100%"},
-//     {selector: "text-align", value: "justify"}
-// ]
-
-console.log(html1.createElement())
+    
+    getCss() {
+    let css = `.${this.className} {`;
+    
+    for (let property in this.styles) {
+    css += `${property}: ${this.styles[property]}; `;
+    }
+    
+    css += '}';
+    
+    return css;
+    }
+    }
+    
+    // Пример использования класса CssClass
+    const myClass = new CssClass('my-class');
+    myClass.setStyle('color', 'red');
+    myClass.setStyle('font-size', '16px');
+    myClass.setStyle('background-color', 'blue');
+    myClass.removeStyle('font-size');
+    
+    console.log(myClass.getCss());

@@ -1,0 +1,96 @@
+body {
+    background-color: #f6f6f6;
+}
+
+ul {
+    margin: 0;
+}
+
+.logo {
+    color: #009595;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.nav-bar {
+    background-color: #404040;
+}
+
+.menu-item:first-child {
+    border-left: 3px solid #595959;
+    border-right: 3px solid #595959;
+}
+
+.menu-item {
+    color: #f6f6f6;
+    font-size: 24px;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-right: 3px solid #595959;
+}
+
+.menu-item:hover { 
+    border-bottom: 3px solid #009595;
+}
+
+.new-visitor{
+    margin-top: 20px;
+    float: right;
+
+}
+
+.visitors {
+    height: 80px;
+    border-bottom: 1px solid #595959;
+}
+
+.buttonSort {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.buttonSearch {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.selectOpt {
+    width: 120px;
+}
+
+.sort_search{
+    margin-top: 10px;
+    padding-bottom: 60px;
+}
+
+.search{
+    float: right;
+    margin-top: 20px;
+}
+
+.sort {
+    float: left;
+    margin-top: 20px;
+}
+
+.SearchA{
+    width: 120px;
+    height: 30px;
+}
+
+.mt10{
+    margin-top: 10px;
+}
+
+.img{
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
